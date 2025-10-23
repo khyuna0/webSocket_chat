@@ -17,7 +17,8 @@ public class WebSocketConfig implements WebSocketConfigurer {
 	@Override // 웹소켓 핸들러 등록 메서드
 	public void registerWebSocketHandlers(WebSocketHandlerRegistry registry) {
 		registry.addHandler(chatHandler, "/ws/chat")
-		.setAllowedOrigins("*"); // 모든 도메인에서 들어오는 요청 허용
+		.setAllowedOrigins("*") // 모든 도메인에서 들어오는 요청 허용
+		.setAllowedOriginPatterns("*"); // 모든 프론트에서 들어오는 요청 허용
 		
 	}
 	
